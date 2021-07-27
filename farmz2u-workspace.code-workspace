@@ -3,10 +3,6 @@
 		{
 			"name": "fmp-frontend-fmp",
 			"path": "../fmp-frontend-fmp"
-		},
-		{
-			"name": "fvp-nxt",
-			"path": "."
 		}
 	],
 	"settings": {}
