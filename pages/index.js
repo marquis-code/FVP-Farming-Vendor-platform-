@@ -6,7 +6,7 @@ import UserHeading from '../components/User-heading'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col w-full min-h-screen py-2">
       <Head>
         <title> Farmz2u FVP</title>
         <link rel="icon" href="/favicon.ico" />
