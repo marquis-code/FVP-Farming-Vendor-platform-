@@ -1,9 +1,11 @@
+import Image from 'next/image'
+import pic from "../public/images/reg-img.svg"
 const ResetSuccessful = () => (
     <>
         <link rel="stylesheet" href="./css/styles.css" />
         <title>Registration Success</title>
         <div className="reg-grid">
-            <img src="./images/reg-img.svg" alt className="reg-image" />
+            <Image src={pic} alt className="reg-image" />
             <div className="reset-link-box reg-success reset-grid">
                 <img src="./images/farmz2u-logo.svg" alt className="form-logo" />
                 <div className="resent-link-sent-info reset-link-info">
