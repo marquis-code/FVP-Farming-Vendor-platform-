@@ -1,4 +1,4 @@
-export const ResetSuccessful = () => (
+const ResetSuccessful = () => (
     <>
         <link rel="stylesheet" href="./css/styles.css" />
         <title>Registration Success</title>
@@ -21,3 +21,6 @@ export const ResetSuccessful = () => (
         </div>
     </>
 )
+
+
+export default ResetSuccessful
