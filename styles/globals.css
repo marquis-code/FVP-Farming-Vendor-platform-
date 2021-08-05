@@ -4545,4 +4545,9 @@ a.hire-tractor-btn {
   margin-left: -40px;
   margin-top: 15px;
 }
-
+.bg-green{
+  background: #298525 0% 0% no-repeat padding-box;
+}
+.bg-orange{
+ background: #F2A133 0% 0% no-repeat padding-box;
+}

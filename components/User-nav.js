@@ -4,8 +4,8 @@ import Flip from "react-reveal/Flip";
 
 function UserNav() {
   // const { setAuthTokens } = useAuth();
-  const [fmp, setFmp] = useState(true);
-  const [fvp, setFvp] = useState(false);
+  const [fmp, setFmp] = useState(false);
+  const [fvp, setFvp] = useState(true);
   const toggleFmp = () => {
     setFmp(!fmp);
     setFvp(false);
@@ -16,7 +16,7 @@ function UserNav() {
   };
 
   return (
-    <nav>
+    <nav className="shadow-lg">
       <div className="w-full flex justify-center">
         <a href="/dashboard" className="logo">
           <img src="/images/farmz2u-logo.svg" alt="Farmz2u" className="pr-12" />
@@ -223,51 +223,48 @@ function UserNav() {
           <Flip top>
             <li className="nav-bar-list mr-2 ">
               <a
-                exact
-                to="/dashboard/fvp/home"
+                href="/home/"
                 className="link-list first-link"
                 activeClassName="current-link"
               >
-                <div className="flex justify-between">Home</div>
+                <div className="flex justify-between">
+                  Home
+                </div>
               </a>
             </li>
-            {/* <li className="nav-bar-list mr-2">
+
+        
+            <li className="nav-bar-list mr-2 ">
               <a
-                exact
-                to="/dashboard/fvp/order"
+                href="/products"
                 className="link-list first-link"
                 activeClassName="current-link"
               >
-                Order
-              </a>
-            </li> */}
-            <li className="nav-bar-list mr-2">
-              <a
-                to="/dashboard/fvp/products"
-                className="link-list first-link"
-                activeClassName="current-link"
-              >
-                Products
+                <div className="flex justify-between">
+                  Products
+                </div>
               </a>
             </li>
-            <li className="nav-bar-list mr-2 mb-3" data-test="nav-component">
+            <li className="nav-bar-list mr-2 ">
               <a
-                to="/dashboard/wallet"
+                href="/stock"
                 className="link-list first-link"
                 activeClassName="current-link"
-                data-test="nav-button"
               >
-                Stock
+                <div className="flex justify-between">
+                  Stock
+                </div>
               </a>
             </li>
-            <li className="nav-bar-list mr-2" data-test="nav-component">
+            <li className="nav-bar-list mr-2 ">
               <a
-                to="/dashboard/fvp/report"
+                href="/report"
                 className="link-list first-link"
                 activeClassName="current-link"
-                data-test="nav-button"
               >
-                Report
+                <div className="flex justify-between">
+                  Report
+                </div>
               </a>
             </li>
           </Flip>

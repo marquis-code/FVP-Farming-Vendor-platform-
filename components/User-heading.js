@@ -35,7 +35,7 @@ function UserHeading(props) {
 
 
   return (
-    <div className="grid-text tab">
+    <div className="grid-text tab lg:pr-10 max-w-7xl">
       {props.title}
 
       <div className="ogun-farmz" onClick={togglePopover}>

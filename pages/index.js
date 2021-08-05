@@ -1,84 +1,64 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import UserNav from '../components/User-nav'
-import UserHeading from '../components/User-heading'
-
+import DashboardWrapper from "../components/DashboardWrapper"
 
 export default function Home() {
+
   return (
-    <div className="flex flex-col w-full min-h-screen py-2">
-      <Head>
-        <title> Farmz2u FVP</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className="">
 
-        <UserNav />
-        <Header />
+    <DashboardWrapper>
+      <div className="flex mt-10" >
 
-        <div className="m-left">
-          <UserHeading/>
-          {/* <UserHeading title="Dashboard" /> */}
+        <div className="w-full max-w-5xl">
 
-          <div className="w-full p-3 md:p-0">
-            {[1, 2].map(() => {
-              return <DashboardItem />;
-            })}
+          <div className="w-full flex justify-between">
+            <div>
+              <h3 className="">Summary</h3>
+              <p>Last 10 Days</p>
+            </div>
+
+            <div className="">
+              <select className="Auth-field mt-0 w-40 border border-gray-400 rounded" name="referer" id="referer" >
+                <option value="">Last 10 days</option>
+                <option value="Facebook">Last 20 days</option>
+
+              </select>
+            </div>
+          </div>
+
+
+          <div className="flex">
+            <div className="flex flex-col items-center w-50 ">
+              <div className="w-full text-white p-3 py-5 bg-green rounded mx-auto">
+
+                <p>Profit</p>
+                <p>
+                  N250,000,000
+                </p>
+              </div>
+            </div>
+            <div className="mx-4 flex flex-col items-center w-50 ">
+              <div className="w-full text-green-600 p-3 py-5 bg-gray-50 rounded mx-auto">
+
+                <p>Sales</p>
+                <p>
+                  N250,000,000
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
 
+        <div className="flex flex-col px-5 items-center w-72 ">
+          <div className="w-full text-white p-3 py-5 bg-yellow-500 rounded mx-auto">
+            
+            <p>Today's Income</p>
+            <p>
+            N250,000,000
+            </p>
+          </div>
+        </div>
       </div>
-      
-    </div>
+    </DashboardWrapper>
+
   )
 }
-
-const DashboardItem = () => {
-  return (
-    <div className="md:w-full mt-10 flex flex-wrap justify-between shadow shadow-none max-w-3xl">
-      <div className="w-full max-w-md md:p-3 h-40 block flex wrap m-3 md:m-0">
-        <img
-          src="/images/cocoa-beans.svg"
-          alt="Product"
-          className="w-3/6 h-full"
-        //   className="product-image"
-        />
-        <div className="ml-2 mt-5 w-full ">
-          <div className="w-full flex justify-between ">
-            <label
-              htmlFor=""
-              className=" w-full md:pl-10 mx-auto font-bold md:text-lg"
-            >
-              Cocoa Beans
-            </label>
-            <img
-              src="/images/more.svg"
-              alt="option"
-              className=" m-2 dashboard-product-info-icon"
-            />
-          </div>
-          <p
-            className="dp-serial w-full
-          mx-auto md:pl-10"
-          >
-            #PRD2244134
-          </p>
-          <button className="primary-btn w-full md:ml-10  wdp-btn">
-            Farming Plan
-          </button>
-        </div>
-      </div>
-
-      <div className="h-40 w-full max-w-xs bg-blue-100 product-status pending m-3 md:m-0">
-        <p className="product-status-info">
-          Capital <br />
-          Application <br />
-          Status
-        </p>
-
-        <h2 className="product-status-state">PENDING</h2>
-      </div>
-    </div>
-  );
-};
-
