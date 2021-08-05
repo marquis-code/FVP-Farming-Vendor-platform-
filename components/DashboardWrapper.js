@@ -19,7 +19,7 @@ export default function Home( {children}) {
         <div className="m-left">
           <UserHeading title="Home" />
 
-          <div className="w-full p-3 md:p-0 ">
+          <div className="w-full p-5 ">
           {children}
           </div>
         </div>
