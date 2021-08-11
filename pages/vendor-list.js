@@ -1,11 +1,33 @@
 import DarkHeader from "../components/store-components/DarkHeader";
+import getUrl from "../components/get-url";
 import Footer from "../components/store-components/footer"
+import React, { useState, useEffect } from 'react';
+
 const Vendors = () => {
+
+    const [vendors, setVendors] = useState()
+
+    useEffect(() => {
+
+        if (typeof window !== 'undefined') {
+            const authTokens = localStorage.getItem('token')
+            console.log(authTokens, "THE USER TOKEN");
+            fetch(getUrl("products"), {
+                headers: {
+                    Authorization: `Token ${authTokens}`,
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => setVendors(data))
+            // .then(console.log(profile))
+        }
+    }
+        , []);
     return (
         <>
-            <title>Search</title>
-        
-            <DarkHeader/>
+            <title>Vendor List</title>
+
+            <DarkHeader />
             <main>
                 <div className="main-grid vendor-list-grid">
                     <div className="search-grid">
@@ -88,8 +110,8 @@ const Vendors = () => {
                     </div>
                 </div>
             </main>
-                 
-       <Footer />
+
+            <Footer />
         </>
 
     );

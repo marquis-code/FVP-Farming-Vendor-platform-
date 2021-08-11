@@ -223,7 +223,7 @@ function UserNav() {
           <Flip top>
             <li className="nav-bar-list mr-2 ">
               <a
-                href="/home/"
+                href="/"
                 className="link-list first-link"
                 activeClassName="current-link"
               >

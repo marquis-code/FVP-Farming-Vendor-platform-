@@ -1,13 +1,18 @@
 import 'tailwindcss/tailwind.css'
 import "../styles/globals.css"
-import { ContextProvider } from "../Context/helpers";
+// import { ContextProvider } from "../ontext/helpers";
+import StoreContextProvider from "../context/StoreContext"
+import AuthenticationContext from "../context/Auth-context"
 
-function MyApp({ Component, pageProps }) {
+
+function App({ Component, pageProps }) {
   return (
-    // <ContextProvider>
+    <StoreContextProvider>
+    <AuthenticationContext>
       <Component {...pageProps} />
-    // </ContextProvider>
+    </AuthenticationContext>
+    </StoreContextProvider>
   )
 }
 
-export default MyApp
+export default App

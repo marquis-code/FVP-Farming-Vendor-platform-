@@ -1,10 +1,88 @@
 import Header from "../components/store-components/header"
 import Footer from "../components/store-components/footer"
+import Product from "../components/store-components/productItem"
+import { useState, useEffect } from "react"
+import getUrl from "../components/get-url";
+
+
 const Store = () => {
+
+    useEffect(() => {
+
+        if (typeof window !== 'undefined') {
+            const authTokens = localStorage.getItem('token')
+            console.log(authTokens, "THE USER TOKEN");
+            fetch(getUrl("products"), {
+                headers: { 
+                    Authorization: `Token ${authTokens}`,
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => setFeaturedProducts(data))
+            // .then(console.log(profile))
+        }
+    }
+        , []);
+
+    const [FeaturedProducts, setFeaturedProducts] = useState([
+        {
+            name: "Apple",
+            vendor: "Nature Valley Agro",
+            price: "100",
+            image: "./images/apple.png"
+        },
+        {
+            name: "Cocoa Beans",
+            vendor: "Kithekani Farms",
+            price: "1,340",
+            image: "./images/cocoa-reduced.png"
+        },
+        {
+            name: "Corn",
+            vendor: "Della Royale Farms",
+            price: "3700",
+            image: "./images/corn-reduced.png"
+
+        },
+        {
+            name: "Potatoes",
+            vendor: "Aisha Goods",
+            price: "100",
+            image: "./images/fresh-potatoes-reduced.png"
+
+        },
+        {
+            name: "Brocolli",
+            vendor: "John and John Farm",
+            price: "4000",
+            image: "./images/broccoli-reduced.png"
+
+        },
+        {
+            name: "Apple",
+            vendor: "Rhamon Store",
+            price: "200",
+            image: "./images/apple.png"
+
+        },
+        {
+            name: "Cocoa Beans",
+            vendor: "John and John Farm",
+            price: "1340",
+            image: "./images/cocoa-reduced.png"
+
+        },
+        {
+            name: "Corn",
+            vendor: "Ade Farmer's Place",
+            price: "2700",
+            image: "./images/corn-reduced.png"
+        },
+    ])
     return (
         <>
-            <Header/>
-             <main>
+            <Header />
+            <main>
                 <div className="main-grid">
                     <div className="intro-col">
                         <img src="./images/mobile-image.png" alt className="intro-img" />
@@ -15,7 +93,7 @@ const Store = () => {
                                 You’re in control of how and what you eat! Have fresh fruits and
                                 vegetables delivered straight to your door from quality farms.
                             </p>
-                            <a href="vendor-list.html" className="start-shopping">
+                            <a href="/vendor-list" className="start-shopping">
                                 Start Shopping
                                 <img
                                     src="./images/shopping-cart.svg"
@@ -27,118 +105,9 @@ const Store = () => {
                     </div>
                     <div className="col-1">
                         <h3 className="col-title col-1-title-lg">Featured Products</h3>
-                        <div className="col-1-box">
-                            <img src="./images/apple.png" alt className="col-1-box-img" />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Apple</h4>
-                                <h6 className="col-1-sub-title">Nature Valley Agro</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>2,000
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/cocoa-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Cocoa Beans</h4>
-                                <h6 className="col-1-sub-title">Kithekani Farms</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>1,340
-                                </p>
-                            </div>
-                            <button className="btn added-to-cart">Added to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/corn-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Corn</h4>
-                                <h6 className="col-1-sub-title">Della Royale Farms</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>2,700
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/fresh-potatoes-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Potatoes</h4>
-                                <h6 className="col-1-sub-title">Aisha Goods</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>2,000
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/broccoli-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Broccoli</h4>
-                                <h6 className="col-1-sub-title">John and John Farm</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>4,000
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img src="./images/apple.png" alt className="col-1-box-img" />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Apple</h4>
-                                <h6 className="col-1-sub-title">Rhamon Store</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>2,000
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/cocoa-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Cocoa Beans</h4>
-                                <h6 className="col-1-sub-title">John and John Farm</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>1,340
-                                </p>
-                            </div>
-                            <button className="btn added-to-cart">Added to Cart</button>
-                        </div>
-                        <div className="col-1-box">
-                            <img
-                                src="./images/corn-reduced.png"
-                                alt
-                                className="col-1-box-img"
-                            />
-                            <div className="col-1-box-info">
-                                <h4 className="col-1-title">Corn</h4>
-                                <h6 className="col-1-sub-title">Ade Farmer's Place</h6>
-                                <p className="col-1-price">
-                                    <sup>N</sup>2,700
-                                </p>
-                            </div>
-                            <button className="btn add-to-cart">Add to Cart</button>
-                        </div>
+                        {FeaturedProducts.map((item) => {
+                            return <Product item={item} />
+                        })}
                     </div>
                     <div className="col-2">
                         <h3 className="col-title col-2-title">Featured Vendors</h3>
@@ -164,7 +133,7 @@ const Store = () => {
                                 <p className="col-2-vendor-title">Pan Jollof</p>
                             </div>
                         </div>
-                        <a href="vendor-list.html" className="btn view-vendors">
+                        <a href="/vendor-list" className="btn view-vendors">
                             View all vendors
                         </a>
                     </div>
@@ -172,7 +141,7 @@ const Store = () => {
                         <h3 className="title-vendor-signup-title">
                             Sign Up <br className="vendor-line-br" /> as a Vendor
                         </h3>
-                        <a href="register.html" className="btn vendor-signup-btn">
+                        <a href="/register" className="btn vendor-signup-btn">
                             Sign Up
                         </a>
                         <img
@@ -183,9 +152,9 @@ const Store = () => {
                     </div>
                 </div>
             </main>
-            <Footer/>
-                </>
-     );
+            <Footer />
+        </>
+    );
 }
- 
+
 export default Store;

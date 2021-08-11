@@ -34,7 +34,7 @@ const Register = () => {
                     </form>
                     <p className="paragraph form-option">
                         Have an Account?{" "}
-                        <a href="/store" className="form-link">
+                        <a href="/index" className="form-link">
                             Log in
                         </a>
                     </p>
