@@ -6,4 +6,4 @@ const Spiner = () =>{
         <div className="lds-ellipsis pulse"></div>
     )
 }
-export default Spiner
+export default Spiner   ``

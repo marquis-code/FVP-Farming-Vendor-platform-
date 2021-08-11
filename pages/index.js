@@ -19,7 +19,7 @@ const Store = () => {
             })
                 .then((response) => response.json())
                 .then((data) => setFeaturedProducts(data))
-            // .then(console.log(profile))
+            // .then(console.log(profile))z
         }
     }
         , []);
