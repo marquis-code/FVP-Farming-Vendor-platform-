@@ -6,12 +6,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "html-to-react": "^1.4.5",
+    "mixpanel-browser": "^2.40.0",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-popover": "^0.5.10",
-    "react-reveal": "^1.2.2",
-    "mixpanel-browser": "^2.40.0"
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
